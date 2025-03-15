@@ -1,8 +1,8 @@
 
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import CustomButton from "../ui/custom-button";
+import Logo from "../ui/logo";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -46,9 +46,12 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto h-full flex flex-col justify-center items-center text-center z-20 relative px-4 md:px-0">
         <div className={`max-w-4xl space-y-6 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-            <span className="text-gradient-gold">آرام</span> للفعاليات
-          </h1>
+          <div className="flex flex-col items-center justify-center mb-4">
+            <Logo size="lg" withText={false} className="mb-4" />
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+              <span className="text-gradient-gold">آرام</span> للفعاليات
+            </h1>
+          </div>
           <p className="text-white/90 text-xl md:text-2xl max-w-2xl mx-auto">
             نحول أفكاركم إلى فعاليات استثنائية خالدة
           </p>

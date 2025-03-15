@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import Logo from "./logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,10 +54,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-aram-gold">آرام</span>
-          <span className="text-sm text-aram-navy dark:text-white mr-1">للفعاليات</span>
-        </Link>
+        <Logo size="md" withText={true} />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6 space-x-reverse">
@@ -101,6 +99,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden fixed inset-0 z-40 mt-16 bg-white dark:bg-aram-navy/95 animate-fade-in">
           <div className="flex flex-col items-center justify-center h-full gap-8">
+            <Logo size="lg" withText={false} className="mb-8" />
             {navLinks.map((link, index) => (
               <Link
                 key={link.path}
