@@ -19,10 +19,11 @@ const Logo = ({ size = 'md', withText = true, className = '' }: LogoProps) => {
   return (
     <Link to="/" className={`flex items-center gap-2 ${className}`}>
       <div className={`relative ${dimensions[size]}`}>
-        <div className="absolute inset-0 bg-aram-gold rounded-full opacity-20 animate-pulse"></div>
-        <div className={`${dimensions[size]} rounded-full bg-gradient-to-br from-aram-gold to-amber-600 flex items-center justify-center text-white font-bold`}>
-          <span className="text-aram-navy font-arabic" style={{ fontSize: size === 'lg' ? '1.5rem' : size === 'md' ? '1.2rem' : '0.8rem' }}>آرام</span>
-        </div>
+        <img 
+          src="/lovable-uploads/287d03d5-484b-4eed-a215-9ff805ecacfa.png" 
+          alt="آرام للفعاليات"
+          className={`${dimensions[size]} object-contain`}
+        />
       </div>
       
       {withText && (
