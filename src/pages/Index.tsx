@@ -7,6 +7,7 @@ import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import { Calendar, Camera, Palette, Music, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import OwnersSection from "@/components/home/OwnersSection";
 
 const Index = () => {
   // Set page title
@@ -28,10 +29,11 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute -top-6 -right-6 w-full h-full border-4 border-aram-gold rounded-xl"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1511795409834-432f7b1629ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                  alt="About Aram Events" 
-                  className="rounded-xl w-full h-auto relative z-10"
-                />
+  src="https://picsum.photos/600/400" 
+  alt="Random Image" 
+  className="rounded-xl w-full h-auto relative z-10"
+/>
+
               </div>
             </div>
             
@@ -131,7 +133,7 @@ const Index = () => {
       
       {/* Testimonials */}
       <TestimonialsSection />
-      
+      <OwnersSection/>
       {/* Contact CTA */}
       <section className="py-16 bg-aram-navy">
         <div className="container mx-auto px-4 text-center">

@@ -16,7 +16,7 @@ const Portfolio = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-white to-aram-beige dark:from-aram-navy dark:to-aram-navy/80">
+      <section className="pt-32 pb-16 bg-gradient-to-b h-screen flex items-center justify-center flex-col from-white to-aram-beige dark:from-aram-navy dark:to-aram-navy/80">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center mb-12">
             <Logo size="md" withText={false} className="mb-4" />

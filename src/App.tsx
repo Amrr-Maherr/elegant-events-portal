@@ -10,7 +10,9 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-
+import "../src/App.css"
+import WhatsAppButton from "./components/WhatsAppButton";
+import GalleryPage from "./pages/GalleryPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,10 +27,11 @@ const App = () => (
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+       <WhatsAppButton />
     </TooltipProvider>
   </QueryClientProvider>
 );

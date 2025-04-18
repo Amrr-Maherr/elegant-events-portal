@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
@@ -9,6 +8,18 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
+
+  // تحقق من حالة الدارك مود عند تحميل الصفحة
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("isDark");
+    if (savedTheme === "true") {
+      document.documentElement.classList.add('dark');
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDark(false);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +41,11 @@ const Navbar = () => {
   const toggleTheme = () => {
     if (isDark) {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem("isDark", "false"); // حفظ الحالة في اللوكال ستوريج
       setIsDark(false);
     } else {
       document.documentElement.classList.add('dark');
+      localStorage.setItem("isDark", "true"); // حفظ الحالة في اللوكال ستوريج
       setIsDark(true);
     }
   };
@@ -42,16 +55,13 @@ const Navbar = () => {
     { name: "خدماتنا", path: "/services" },
     { name: "أعمالنا", path: "/portfolio" },
     { name: "من نحن", path: "/about" },
+    { name: "معرض الصور", path: "/gallery" },
     { name: "تواصل معنا", path: "/contact" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-8 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 dark:bg-aram-navy/80 shadow-md backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-8 transition-all duration-300 ${scrolled ? "bg-white/80 dark:bg-aram-navy/80 shadow-md backdrop-blur-md" : "bg-transparent"}`}
     >
       <div className="container mx-auto flex justify-between items-center">
         <Logo size="md" withText={true} />

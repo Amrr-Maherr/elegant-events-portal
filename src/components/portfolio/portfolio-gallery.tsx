@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; // تأكد من صحة المسار
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"; // تأكد من صحة المسار
 
 const categories = [
   { id: "all", name: "جميع الأعمال" },
@@ -11,6 +10,7 @@ const categories = [
   { id: "private", name: "الحفلات الخاصة" },
 ];
 
+// بيانات portfolioItems تبقى كما هي
 const portfolioItems = [
   {
     id: 1,
@@ -54,7 +54,7 @@ const portfolioItems = [
     category: "corporate",
     image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
   },
-  {
+   {
     id: 7,
     title: "معرض سيارات فاخرة",
     description: "تنظيم معرض للسيارات الفاخرة في أبوظبي",
@@ -70,74 +70,92 @@ const portfolioItems = [
   },
 ];
 
+
 const PortfolioGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedItem, setSelectedItem] = useState<number | null>(null);
+  // Removed setSelectedItem as DialogTrigger handles opening now
 
-  const filteredItems = selectedCategory === "all" 
-    ? portfolioItems 
+  const filteredItems = selectedCategory === "all"
+    ? portfolioItems
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   return (
     <div className="mt-8">
       <Tabs defaultValue="all" className="w-full" onValueChange={setSelectedCategory}>
-        <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-8">
+        {/* --- TabsList Styling Updated --- */}
+        <TabsList className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-20 p-1.5 bg-aram-beige/40 dark:bg-aram-navy/60 rounded-xl">
           {categories.map((category) => (
-            <TabsTrigger 
-              key={category.id} 
+            <TabsTrigger
+              key={category.id}
               value={category.id}
-              className="bg-white/50 dark:bg-white/5 hover:bg-aram-gold/20 data-[state=active]:bg-aram-gold data-[state=active]:text-aram-navy"
+              // --- TabsTrigger Styling Updated ---
+              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 ease-in-out
+                         text-aram-navy/70 dark:text-white/60                       /* Default Text Color */
+                         hover:bg-aram-gold/10 dark:hover:bg-aram-gold/20            /* Hover Background */
+                         hover:text-aram-gold dark:hover:text-aram-gold              /* Hover Text Color */
+                         focus-visible:ring-2 focus-visible:ring-aram-gold/50       /* Focus Ring */
+                         focus-visible:ring-offset-2 focus-visible:ring-offset-aram-beige dark:focus-visible:ring-offset-aram-navy /* Focus Ring Offset */
+                         data-[state=active]:bg-aram-gold                           /* Active Background */
+                         data-[state=active]:text-aram-navy                         /* Active Text Color */
+                         data-[state=active]:font-semibold                          /* Active Font Weight */
+                         data-[state=active]:shadow-md"                             /* Active Shadow */
             >
               {category.name}
             </TabsTrigger>
           ))}
         </TabsList>
 
+        {/* TabsContent and items grid remain the same */}
         <TabsContent value={selectedCategory} className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
+              // Using Dialog directly around the trigger element
               <Dialog key={item.id}>
                 <DialogTrigger asChild>
-                  <div 
+                  {/* Item Card */}
+                  <div
                     className="bg-white dark:bg-aram-navy/80 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
-                    onClick={() => setSelectedItem(item.id)}
+                    // Removed onClick handler here, DialogTrigger handles it
                   >
                     <div className="h-64 overflow-hidden">
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy" // Added lazy loading
                       />
                     </div>
                     <div className="p-5">
                       <h3 className="text-xl font-bold text-aram-navy dark:text-white">{item.title}</h3>
-                      <p className="text-aram-navy/70 dark:text-white/70 mt-2">{item.description}</p>
+                      <p className="text-aram-navy/70 dark:text-white/70 mt-2 truncate">{item.description}</p> {/* Added truncate */}
                     </div>
                   </div>
                 </DialogTrigger>
-                
-                <DialogContent className="sm:max-w-3xl">
+
+                {/* Dialog Content */}
+                <DialogContent className="sm:max-w-3xl p-4 sm:p-6 bg-white dark:bg-aram-navy"> {/* Added background to content */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="overflow-hidden rounded-lg">
-                      <img 
-                        src={item.image} 
+                    <div className="overflow-hidden rounded-lg aspect-square md:aspect-auto"> {/* Consistent aspect ratio */}
+                      <img
+                        src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div>
+                    <div className="flex flex-col justify-center"> {/* Center content vertically */}
                       <h3 className="text-2xl font-bold text-aram-navy dark:text-white mb-3">{item.title}</h3>
-                      <p className="text-aram-navy/70 dark:text-white/70 mb-4">{item.description}</p>
-                      <div className="space-y-3">
+                      <p className="text-aram-navy/70 dark:text-white/70 mb-4 leading-relaxed">{item.description}</p>
+                      <div className="space-y-3 mt-auto pt-4 border-t border-gray-200 dark:border-white/20"> {/* Added border */}
                         <div className="flex items-center gap-2">
-                          <span className="text-aram-gold font-bold">التصنيف:</span>
-                          <span className="text-aram-navy/80 dark:text-white/80">
+                          <span className="text-aram-gold font-bold text-sm">التصنيف:</span>
+                          <span className="text-aram-navy/80 dark:text-white/80 text-sm">
                             {categories.find(cat => cat.id === item.category)?.name || ''}
                           </span>
                         </div>
+                        {/* Example: Location (replace with real data if available) */}
                         <div className="flex items-center gap-2">
-                          <span className="text-aram-gold font-bold">الموقع:</span>
-                          <span className="text-aram-navy/80 dark:text-white/80">دبي، الإمارات العربية المتحدة</span>
+                           <span className="text-aram-gold font-bold text-sm">الموقع:</span>
+                           <span className="text-aram-navy/80 dark:text-white/80 text-sm">دبي/أبوظبي، الإمارات</span>
                         </div>
                       </div>
                     </div>
