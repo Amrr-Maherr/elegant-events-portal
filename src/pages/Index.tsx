@@ -29,7 +29,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute -top-6 -right-6 w-full h-full border-4 border-aram-gold rounded-xl"></div>
                 <img 
-  src="https://picsum.photos/600/400" 
+  src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80" 
   alt="Random Image" 
   className="rounded-xl w-full h-auto relative z-10"
 />

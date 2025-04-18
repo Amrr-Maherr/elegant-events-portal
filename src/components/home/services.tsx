@@ -8,7 +8,7 @@ const services = [
     id: 1,
     title: "حفلات الزفاف",
     description: "نقدم خدمات متكاملة لتنظيم حفلات الزفاف الفاخرة بتصميم فريد لكل عروسين.",
-    image: "https://picsum.photos/600/400",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80",
   },
   {
     id: 2,

@@ -35,7 +35,7 @@ const services = [
     title: "باقة تصميم الكوشة الاحترافية",
     description: "تصميم وتنفيذ كوشة مميزة بأحدث التصاميم مع الممر والاستيدج لإضفاء لمسة فاخرة على مناسبتك. السعر: 32,000 درهم.",
      // New Placeholder: Focus on wedding stage / Kosha decoration
-    image: "https://images.unsplash.com/photo-1606141415309-7e145d4d7f1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80",
     features: [
       "كوشة بأحدث تصميمات الشركة",
       "استيدج وممر متناسق",
@@ -46,7 +46,7 @@ const services = [
     title: "باقة ليلة الخطوبة المميزة (50 شخص)",
     description: "باقة مصممة خصيصاً لليلة الخطوبة، تشمل الكوشة، التصوير الفوتوغرافي والفيديو، الدي جي، الضيافة، وتجهيز الطاولات والكراسي لـ 50 ضيفاً. السعر: 9,400 درهم.",
      // New Placeholder: Engagement party / celebration atmosphere
-    image: "https://images.unsplash.com/photo-1611106733911-445c8f0f40e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80",
     features: [
       "كوشة مناسبة للخطوبة",
       "تصوير فوتوغرافي",
@@ -62,7 +62,7 @@ const services = [
     title: "باقة ليلة الخطوبة الأساسية",
     description: "باقة أساسية وأنيقة لليلة الخطوبة تركز على تصميم الكوشة، الاستيدج، الممر، مع التصوير الفوتوغرافي، الدي جي، وتصميم المدخل والمطبوعات. السعر: 9,400 درهم.",
     // New Placeholder: Similar engagement/party vibe, perhaps simpler decor focus
-    image: "https://images.unsplash.com/photo-1587271681344-1a106e057999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80",
     features: [
       "كوشة مناسبة للخطوبة",
       "استيدج",
