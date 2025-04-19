@@ -54,7 +54,7 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="rounded-xl overflow-hidden shadow-xl"> {/* Added container for image */}
                 <img
-                  src="https://images.unsplash.com/photo-1561489396-6f546a3a7d1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGV2ZW50JTIwcGxhbm5pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                  src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80"
                   alt="قصة آرام"
                   className="w-full h-full object-cover max-h-[500px]" // Consistent height control
                   loading="lazy"
@@ -199,46 +199,6 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team */}
-        {/* --- Updated background and text --- */}
-        <section className="py-16 bg-aram-cream/30 dark:bg-aram-navy/95">
-          <div className="container mx-auto px-4">
-             {/* --- Updated text color --- */}
-            <h2 className="text-3xl font-bold text-aram-navy dark:text-white text-center mb-12">فريقنا</h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {teamMembers.map((member, index) => (
-                 // --- Ensure TeamMember component handles dark mode ---
-                <TeamMember
-                  key={index}
-                  name={member.name}
-                  role={member.role}
-                  bio={member.bio}
-                  image={member.image}
-                   // Pass dark mode classes if needed, e.g.,
-                   // className="dark:bg-white/10 dark:shadow-lg"
-                />
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-               {/* --- Updated text color --- */}
-              <p className="text-lg text-aram-navy/80 dark:text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-                فريقنا من المحترفين المبدعين هو أساس نجاحنا. نعمل معاً لتحقيق رؤيتكم وتقديم تجارب استثنائية.
-              </p>
-
-               {/* Assuming CustomButton handles dark mode for 'outline' variant */}
-              <CustomButton
-                variant="outline" // Ensure this variant looks good on dark:bg-aram-navy/95
-                size="lg"
-                onClick={() => window.location.href = '/contact'}
-              >
-                تواصل مع فريقنا
-              </CustomButton>
             </div>
           </div>
         </section>
